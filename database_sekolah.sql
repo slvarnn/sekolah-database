@@ -5,7 +5,6 @@ database_sekolah.sql
 -- #1: Membuat Database Sekolah
 -- ================================================
 
-
 -- ================================================
 -- Bag2ian 2: Membuat Tabel dan Relasi
 -- ================================================
@@ -16,7 +15,6 @@ CREATE TABLE siswa (
     umur INT,
     jurusan VARCHAR(100)
 );
-
 -- CREATE TABEL nilai
 CREATE TABLE nilai (
     id SERIAL PRIMARY KEY,
@@ -24,7 +22,6 @@ CREATE TABLE nilai (
     mata_pelajaran VARCHAR(100),
     nilai INT
 );
-
 
 -- ================================================
 -- Bagian 3: Isi Data (INSERT)
@@ -36,7 +33,6 @@ INSERT INTO siswa (nama, umur, jurusan) VALUES
 ('Citra', 16, 'IPA'),
 ('Dian', 18, 'Bahasa'),
 ('Eko', 17, 'IPA');
-
 -- Memasukkan data ke tabel nilai
 INSERT INTO nilai (siswa_id, mata_pelajaran, nilai) VALUES
 (1, 'Matematika', 85), -- Nilai untuk Andi
@@ -56,12 +52,9 @@ INSERT INTO nilai (siswa_id, mata_pelajaran, nilai) VALUES
 -- ================================================
 -- Menampilkan semua siswa
 SELECT * FROM siswa;
-
 -- Menampilkan nama siswa dengan jurusan IPA
 SELECT nama, jurusan FROM siswa WHERE jurusan = 'IPA';
-
--- Menampilkan nilai rata-rata tiap siswa (menggunakan JOIN dan GROUP BY)
-SELECT
+-- Menampilkan nilai rata-rata tiap siswa
      s.nama,
      AVG(n.nilai) AS rata_rata_nilai
 FROM
@@ -71,21 +64,17 @@ JOIN
 GROUP BY
      s.nama;
 
-
 -- ============================================================
 -- Bagian 5: Update & Delete (Data Manipulation Language - DML)
 -- ============================================================
--- Update jurusan salah satu siswa (contoh: Eko menjadi 'Bahasa')
+-- Update jurusan salah satu siswa
 UPDATE siswa
 SET jurusan = 'Bahasa'
 WHERE nama = 'Eko';
-
 -- Verifikasi update (dijalankan setelah melakukan UPDATE di atas)
 SELECT * FROM siswa WHERE nama = 'Eko';
-
 -- Hapus salah satu data nilai siswa
 DELETE FROM nilai
 WHERE siswa_id = 1 AND mata_pelajaran = 'Matematika';
-
 -- Verifikasi delete (dijalankan setelah melakukan DELETE di atas)
 SELECT * FROM nilai WHERE siswa_id = 1;
