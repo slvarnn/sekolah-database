@@ -1,3 +1,4 @@
+-- Changed 06 September 2024
 database_sekolah.sql
 
 -- ================================================
