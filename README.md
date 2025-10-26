@@ -1,5 +1,7 @@
 # Project Membuat Database Sekolah  
 
+---
+
 ## Deskripsi Proyek  
 Proyek ini merupakan bagian dari tugas *Back-End Development* yang berfokus pada pembuatan dan pengelolaan **database sekolah** menggunakan **MySQL**.  
 
