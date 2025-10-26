@@ -109,5 +109,3 @@ UPDATE siswa SET jurusan = "IPS" WHERE id = 1;
 -- Hapus salah satu nilai
 DELETE FROM nilai WHERE id = 3;
 ```
-
----
